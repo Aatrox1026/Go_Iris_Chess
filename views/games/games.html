@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Games</title>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Turns</th>
+                    <th>Status</th>
+                    <th>Winner</th>
+                    <th>White ID</th>
+                    <th>Black ID</th>
+                    <th>ECO Code</th>
+                    <th>Opening</th>
+                </tr>
+                {{range .games}}
+                <tr>
+                    <td>{{.ID}}</td>
+                    <td>{{.Turns}}</td>
+                    <td>{{.Status}}</td>
+                    <td>{{.Winner}}</td>
+                    <td>{{.WhiteID}}</td>
+                    <td>{{.BlackID}}</td>
+                    <td>{{.ECOCode}}</td>
+                    <td>{{.Opening}}</td>
+                </tr>
+                {{end}}
+        </table>
+    </body>
+</html>

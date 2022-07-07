@@ -1,0 +1,37 @@
+package controllers
+
+import (
+	"github.com/kataras/iris/v12"
+)
+
+// mvc.Configure(app.Party("/template"), func(app *mvc.Application) {
+// 	app.Handle(new(controllers.GameController))
+// })
+
+type TemplateController struct {
+	Ctx iris.Context
+}
+
+// GET: /template
+func (c *TemplateController) Get() {}
+
+// GET: /template/{id}
+func (c *TemplateController) GetBy(id int64) {}
+
+// GET: /template/login
+func (c *TemplateController) GetLogin() {}
+
+// GET: /template/profile/followers
+func (c *TemplateController) GetProfileFollowers() {}
+
+// POST: /template
+func (c *TemplateController) Post() {}
+
+// PUT: /template
+func (c *TemplateController) Put() {}
+
+// PATCH: /template
+func (c *TemplateController) Patch() {}
+
+// DELETE: /template
+func (c *TemplateController) Delete() {}
