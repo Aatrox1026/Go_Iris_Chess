@@ -84,3 +84,12 @@ func (s *GameService) GetAll() *[]models.Game {
 	}
 	return &games
 }
+
+func (s *GameService) GetByID(id int64) *models.Game {
+	var game models.Game
+	var result = db.First(&game, id)
+	if result.Error != nil {
+		fmt.Printf("db.Find err: %s\n", result.Error)
+	}
+	return &game
+}

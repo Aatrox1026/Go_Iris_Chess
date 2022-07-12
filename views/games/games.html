@@ -21,7 +21,7 @@
                 </tr>
                 {{range .games}}
                 <tr>
-                    <td>{{.ID}}</td>
+                    <td><a href="/games/{{.ID}}">{{.ID}}</a></td>
                     <td>{{.Turns}}</td>
                     <td>{{.Status}}</td>
                     <td>{{.Winner}}</td>
