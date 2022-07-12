@@ -12,6 +12,8 @@ import (
 
 var db = database.DB
 
+type GameService struct{}
+
 func init() {
 	var err error
 
@@ -69,14 +71,16 @@ func init() {
 
 		if result.Error != nil {
 			fmt.Printf("db.Create err: %s\n", result.Error)
+			return
 		}
 	}
 }
 
-func GamesSelectAll(games *[]models.Game) {
-
-	var result = db.Find(games)
+func (s *GameService) GetAll() *[]models.Game {
+	var games []models.Game
+	var result = db.Find(&games)
 	if result.Error != nil {
 		fmt.Printf("db.Find err: %s\n", result.Error)
 	}
+	return &games
 }

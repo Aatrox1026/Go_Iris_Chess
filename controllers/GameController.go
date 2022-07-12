@@ -8,12 +8,13 @@ import (
 )
 
 type GameController struct {
-	Ctx iris.Context
+	Ctx     iris.Context
+	service services.GameService
 }
 
 func (c *GameController) Get() {
 	var games []models.Game
-	services.GamesSelectAll(&games)
+	games = *c.service.GetAll()
 
 	if len(games) == 0 {
 		c.Ctx.ViewData("msg", "No games found")
